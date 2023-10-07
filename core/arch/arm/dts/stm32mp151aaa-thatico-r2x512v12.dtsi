@@ -236,9 +236,9 @@
 		reg = <0x4a>;
 		#sound-dai-cells = <0>;
 		VL-supply = <&v3v3>;
-		VD-supply = <&v1v8_audio>;
-		VA-supply = <&v1v8_audio>;
-		VAHP-supply = <&v1v8_audio>;
+		VD-supply = <&v1v8>;
+		VA-supply = <&v1v8>;
+		VAHP-supply = <&v1v8>;
 		reset-gpios = <&gpiog 4 GPIO_ACTIVE_LOW>;
 		clocks = <&sai2a>;
 		clock-names = "MCLK";
@@ -859,12 +859,6 @@
 	phy-names = "usb2-phy";
 	usb-role-switch;
 	status = "disabled";
-
-	port {
-		usbotg_hs_ep: endpoint {
-			remote-endpoint = <&con_usbotg_hs_ep>;
-		};
-	};
 };
 
 &usbphyc {
