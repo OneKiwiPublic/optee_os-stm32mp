@@ -131,25 +131,6 @@
 	status = "disabled";
 };
 
-&ethernet0 {
-	status = "disabled";
-	pinctrl-0 = <&ethernet0_rgmii_pins_a>;
-	pinctrl-1 = <&ethernet0_rgmii_sleep_pins_a>;
-	pinctrl-names = "default", "sleep";
-	phy-mode = "rgmii-id";
-	max-speed = <1000>;
-	phy-handle = <&phy0>;
-
-	mdio0 {
-		#address-cells = <1>;
-		#size-cells = <0>;
-		compatible = "snps,dwmac-mdio";
-		phy0: ethernet-phy@0 {
-			reg = <0>;
-		};
-	};
-};
-
 &gpu {
 	contiguous-area = <&gpu_reserved>;
 };
@@ -507,6 +488,7 @@
 	mmc-ddr-3_3v;
 	status = "disabled";
 };
+
 &timers1 {
 	/* spare dmas for other usage */
 	/delete-property/dmas;
