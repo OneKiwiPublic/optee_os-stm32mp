@@ -489,8 +489,8 @@
 	status = "disabled";
 };
 
+/*
 &timers1 {
-	/* spare dmas for other usage */
 	/delete-property/dmas;
 	/delete-property/dma-names;
 	status = "disabled";
@@ -580,7 +580,7 @@
 	counter {
 		status = "okay";
 	};
-};
+};*/
 
 &uart4 {
 	pinctrl-names = "default", "sleep", "idle";
@@ -630,13 +630,6 @@
 	st,tune-squelch-level = <3>;
 	st,tune-hs-rx-offset = <2>;
 	st,no-lsfs-sc;
-};
-
-&usart3 {
-	pinctrl-names = "default";
-	pinctrl-0 = <&usart3_pins_c>;
-	uart-has-rtscts;
-	status = "disabled";
 };
 
 &vrefbuf {
